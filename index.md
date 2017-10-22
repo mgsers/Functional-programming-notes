@@ -76,5 +76,36 @@ foo( 1, 2, 3, 4 );        // 1 2 3 [ 4 ]
 foo( 1, 2, 3, 4, 5 );    // 1 2 3 [ 4, 5 ]
 ```
 
+</p>
+
+### 3，函数输出
+
+<p>在 JavaScript 中，函数只会返回一个值。下面的三个函数都有相同的 return 操作。
+
+```javascript
+function foo() {}
+
+function bar() {
+    return;
+}
+
+function baz() {
+    return undefined;
+}
+```
+
+如果你没有 return 值，或者你使用 return;，那么则会隐式地返回 undefined 值。
+
+如果想要尽可能靠近函数式编程的定义：使用函数而非程序，那么我们的函数必须永远有返回值。这也意味着他们必须明确地 return 一个值，通常这个值也不是 undefined。
+
+一个 return 的表达式仅能够返回一个值。所以，如果你需要返回多个值，切实可行的办法就是把你需要返回的值放到一个复合值当中去，例如数组、对象：
+
+```javascript 
+function foo() {
+    var retValue1 = 11;
+    var retValue2 = 31;
+    return [ retValue1, retValue2 ];
+}
+```
 
 </p>
